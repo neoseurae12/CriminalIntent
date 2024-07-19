@@ -25,10 +25,8 @@ class CrimeListAdapter(
 
     override fun onBindViewHolder(holder: CrimeHolder, position: Int) {
         val crime = crimes[position]
-        holder.apply {
-            binding.crimeTitle.text = crime.title
-            binding.crimeDate.text = crime.date.toString()
-        }
+
+        holder.bind(crime)
     }
 
     override fun getItemCount(): Int = crimes.size
