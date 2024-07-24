@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.bignerdranch.android.criminalintent.databinding.FragmentCrimeDetailBinding
+import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 import java.util.UUID
 
 class CrimeDetailFragment: Fragment() {
@@ -22,10 +24,12 @@ class CrimeDetailFragment: Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val dateFormatter = SimpleDateFormat("EEEE, MMMM dd, yyyy.", Locale.ENGLISH)
+
         crime = Crime(
             id = UUID.randomUUID(),
             title = "",
-            date = Date(),
+            date = dateFormatter.format(Date()),
             isSolved = false,
             requiresPolice = false
         )
@@ -50,7 +54,7 @@ class CrimeDetailFragment: Fragment() {
             }
 
             crimeData.apply {
-                text = crime.date.toString()
+                text = crime.date
                 isEnabled = false
             }
 

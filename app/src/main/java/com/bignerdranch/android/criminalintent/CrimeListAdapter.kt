@@ -14,7 +14,7 @@ class GeneralCrimeHolder(
 
     fun bind(crime: Crime) {
         binding.crimeTitle.text = crime.title
-        binding.crimeDate.text = crime.date.toString()
+        binding.crimeDate.text = crime.date
 
         binding.root.setOnClickListener {
             Toast.makeText(
@@ -38,7 +38,7 @@ class SeriousCrimeHolder(
 
     fun bind(crime: Crime) {
         binding.seriousCrimeTitle.text = crime.title
-        binding.seriousCrimeDate.text = crime.date.toString()
+        binding.seriousCrimeDate.text = crime.date
 
         binding.root.setOnClickListener {
             Toast.makeText(
