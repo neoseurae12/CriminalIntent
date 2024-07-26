@@ -48,6 +48,11 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)  // Fragment library
     implementation(libs.androidx.lifecycle.viewmodel.ktx)   // `lifecycle-viewmodel-ktx` library
     implementation(libs.androidx.recyclerview)  // RecyclerView library
+
+    implementation(libs.xkotlinx.coroutines.core)   // core Coroutines library
+    implementation(libs.kotlinx.coroutines.android) // a library to hook up the main thread in Android to the coroutines
+    implementation(libs.androidx.lifecycle.runtime.ktx) // a library to enable me to safely consume data coming from a coroutine inside Fragment or Activity
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
